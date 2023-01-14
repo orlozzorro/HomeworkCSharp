@@ -15,13 +15,18 @@ int value1 = Convert.ToInt32(stringValue1);
 int value2 = Convert.ToInt32(stringValue2);
 int value3 = Convert.ToInt32(stringValue3);
 
-if (value1 >= value2) 
-{
-    if (value1 >= value3) Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value1}");
-    else Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value3}");
-}
-else
-{
-    if (value2 >= value3) Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value2}");
-    else Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value3}");
-}
+//Индийский код
+// if (value1 >= value2) 
+// {
+//     if (value1 >= value3) Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value1}");
+//     else Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value3}");
+// }
+// else
+// {
+//     if (value2 >= value3) Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value2}");
+//     else Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {value3}");
+// }
+int maxNumber = value1;
+if (value2 > maxNumber) maxNumber = value2;
+if (value3 > maxNumber) maxNumber = value3;
+Console.WriteLine($"Из введенных чисел {value1}, {value2}, {value3} Максимальное число {maxNumber}");
