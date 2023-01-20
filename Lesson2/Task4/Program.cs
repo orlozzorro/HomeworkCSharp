@@ -15,4 +15,4 @@ int i = new Random().Next(100, 1000);
 Console.WriteLine($"Сгенерировано число: {i}");
 Console.WriteLine($"Новое число без второй цифры: {DeleteSecondDigit(i)}");
 // gen++;
-// }
+// }//
