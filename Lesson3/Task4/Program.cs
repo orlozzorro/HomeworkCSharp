@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Напишите программу, которая выводит первые заданные элемента следующей последовательности: 
+// -> 12
+// 1 2 2 3 3 3 4 4 4 4 5 5
