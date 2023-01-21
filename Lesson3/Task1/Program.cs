@@ -6,10 +6,10 @@
 
 // 23432 -> да
 
-int Promt(string message)
+long Promt(string message)
 {
     Console.Write($"{message} > ");
-    return Convert.ToInt32(Console.ReadLine());
+    return Convert.ToInt64(Console.ReadLine());
 }
 
 //super Light version string as array
@@ -32,10 +32,10 @@ int Promt(string message)
 // semi-Hard Version - массивы
 
 // hard Version
-bool CheckPalindprome(int input)
+bool CheckPalindprome(long input)
 {
-    int i = 0; //сюда запишем сколько знаков в числе
-    int a = input;
+    long i = 0; //сюда запишем сколько знаков в числе
+    long a = input;
     while (a > 0) // цикл, который считает количество знаков
     {
         a = a / 10;
@@ -45,15 +45,15 @@ bool CheckPalindprome(int input)
     while(input > 0 && i > 1)
     {
         // System.Console.WriteLine($"input = {input}");
-        int aFirst = Convert.ToInt32(Math.Truncate(input / Math.Pow(10, i-1)));// первая цифра числа
-        int aLast = input % 10; // последняя цифра чиасла
+        long aFirst = Convert.ToInt64(Math.Truncate(input / Math.Pow(10, i-1)));// первая цифра числа
+        long aLast = input % 10; // последняя цифра чиасла
         // System.Console.WriteLine($"aFirst = {aFirst}");
         // System.Console.WriteLine($"aLast = {aLast}");
         if (aFirst != aLast)
         {
             return false;
         }
-        input = Convert.ToInt32(input - (aFirst * Math.Pow(10, i-1)));
+        input = Convert.ToInt64(input - (aFirst * Math.Pow(10, i-1)));
         input = input / 10;
         i = i - 2;
         // System.Console.WriteLine($"input = {input}");
@@ -63,7 +63,7 @@ bool CheckPalindprome(int input)
     return true;
 } 
 
-int value = Promt("Введите число");
+long value = Promt("Введите число");
 if (value > 9)
 {
     if (CheckPalindprome(value)) Console.WriteLine($"Введенное значение {value} - палиндром ");
