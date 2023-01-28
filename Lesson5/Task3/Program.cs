@@ -2,9 +2,9 @@
 
 // [3 7 22 2 78] -> 76
 
-int[] GenerateArray(int len)
+double[] GenerateArray(int len)
 {
-    int[] array = new int[len];
+    double[] array = new double[len];
     Random rnd = new Random();
     for (int i = 0; i < array.Length; i++)
     {
@@ -13,7 +13,7 @@ int[] GenerateArray(int len)
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     foreach (int item in array)
     {
@@ -22,11 +22,11 @@ void PrintArray(int[] array)
     System.Console.WriteLine();
 }
 
-int MaxMinDiff(int[] array)
+double MaxMinDiff(double[] array)
 {
-    int max = array[0];
-    int min = array[0];
-    int result;
+    double max = array[0];
+    double min = array[0];
+    double result;
     for (int i = 1; i < array.Length; i++)
     {
         if (array[i] > max) max = array[i];
@@ -35,7 +35,7 @@ int MaxMinDiff(int[] array)
     result = max - min;
     return result;
 }
-int[] array = GenerateArray(12);
+double[] array = GenerateArray(12);
 
 System.Console.WriteLine($"Сгенерирован массив:");
 PrintArray(array);
