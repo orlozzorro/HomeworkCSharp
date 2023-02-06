@@ -25,13 +25,21 @@ void PrintArray(int[,] array)
     }
 }
 //вычленяем строки и столбцы из входящих массивов
-int[] LineOfMatrix(int lineNumber, int[,] array1, bool row)
+int[] LineOfMatrix(int lineNumber, int[,] array, bool row)
 {
-    int[] resultArray = new int[array1.GetLength(0)];
+    int[] resultArray;
+    if (row) resultArray = new int[array.GetLength(1)];
+    else resultArray = new int[array.GetLength(0)];
     for (int i = 0; i < resultArray.GetLength(0); i++)
     {
-        if (row) resultArray[i] = array1[lineNumber, i];
-        else resultArray[i] = array1[i, lineNumber];
+        if (row) 
+        {
+            resultArray[i] = array[lineNumber, i];
+        }
+        else 
+        {
+            resultArray[i] = array[i, lineNumber];
+        }
     }
     return resultArray;
 }
@@ -55,12 +63,12 @@ int[,] MatrixMultiplication(int[,] array1, int[,] array2)
     return resultArray;
 }
 
-int ElementOfMatrix(int[] array1, int[] array2)
+int ElementOfMatrix(int[] array, int[] array2)
 {
     int sum = 0;
-    for (int i = 0; i < array1.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        sum += array1[i] * array2[i];
+        sum += array[i] * array2[i];
     }
     return sum;
 }
@@ -70,7 +78,7 @@ int[,] array1 = GenerateArray(2, 3);
 PrintArray(array1);
 
 System.Console.WriteLine("Matrix-2");
-int[,] array2 = GenerateArray(2, 2);
+int[,] array2 = GenerateArray(3, 2);
 PrintArray(array2);
 if (array1.GetLength(1) == array2.GetLength(0))
 {
