@@ -70,7 +70,7 @@ int[,] array1 = GenerateArray(2, 3);
 PrintArray(array1);
 
 System.Console.WriteLine("Matrix-2");
-int[,] array2 = GenerateArray(3, 2);
+int[,] array2 = GenerateArray(2, 2);
 PrintArray(array2);
 if (array1.GetLength(1) == array2.GetLength(0))
 {
